@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './Main/Main';
@@ -6,6 +5,7 @@ import Home from './component/Home/Home';
 import About from './component/About/About';
 import Statics from './component/Statics/Statics';
 import Blog from './component/Blog/Blog';
+import QuizStart from './component/QuizStart/QuizStart';
 
 
 
@@ -20,7 +20,7 @@ function App() {
     {path:'/about',element:<About/>},
     {path:'/statics',element:<Statics/>},
     {path:'/blog',element:<Blog/>},
-    
+    {path:'/quiz',element:<QuizStart></QuizStart>}
     
   ]}
   ])
