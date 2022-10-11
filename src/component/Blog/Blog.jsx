@@ -2,7 +2,8 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="m-24">
+    <section className="m-32">
+      <div className="mt-32">
       <div className="bg-gray-100 p-5 rounded leading-loose">
         <h1 className="text-center text-2xl bold">
           What is purpose of use react router?
@@ -98,6 +99,7 @@ const Blog = () => {
         </p>
       </div>
     </div>
+    </section>
   );
 };
 

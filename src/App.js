@@ -14,15 +14,19 @@ function App() {
 
   const router=createBrowserRouter([
     {path:'/',element:<Main></Main>,
-    loader:()=>fetch('https://openapi.programming-hero.com/api/quiz'),
   children:[
-    {path:'/home',element:<Home/>},
+    {path:'/home',
+    loader:()=>fetch('https://openapi.programming-hero.com/api/quiz'),
+    element:<Home/>},
     {path:'/about',element:<About/>},
     {path:'/statics',element:<Statics/>},
     {path:'/blog',element:<Blog/>},
-    {path:'/quiz',element:<QuizStart></QuizStart>}
-    
+    {path:'/quiz/:quizId',
+    loader:async({params})=>{
+      return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)},
+    element:<QuizStart></QuizStart>}
   ]}
+
   ])
   return (
  <RouterProvider router={router}></RouterProvider>
