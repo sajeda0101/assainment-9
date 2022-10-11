@@ -1,22 +1,71 @@
+import { EyeIcon } from "@heroicons/react/24/solid";
 import React from "react";
-import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const QuizDetails = ({ quizQuestion }) => {
+  const {correctAnswer}=quizQuestion
+  const rightAnswer=(value)=>{
+    toast.success(`${value}`,{
+      position:'top-center',
+      autoClose:2000,
+      hideProgressBar:false,
+      closeOnClick:true,
+      pauseOnHover:true,
+      draggable:true,
+      progress:undefined,
+      theme:'light'
+
+    })}
+  const wrongAnswer=(value)=>{
+    toast.success(`${value}`,{
+      position:'top-center',
+      autoClose:2000,
+      hideProgressBar:false,
+      closeOnClick:true,
+      pauseOnHover:true,
+      draggable:true,
+      progress:undefined,
+      theme:'light'
+
+    })}
+    const handleClick=(event)=>{
+      const value=event.target.innerText;
+      if(value===correctAnswer){
+        rightAnswer('Answer is Correct')
+      }
+      else{
+        wrongAnswer('Answer is Wrong')
+      }
+    }
+   const notify=(event)=>{
+    const value=event.target.innerText;
+      if(value===correctAnswer){
+        rightAnswer('Answer is Correct')
+      }
+   }
+  
+   
+      
+    
   const { question, options, } = quizQuestion;
+ 
   
   return (
-    <div className="bg-gray-500  py-4 m-12 text-center rounded-lg">
+    <div className="bg-gray-500 shadow-lg py-4 m-12 text-center rounded-lg">
 
-      <h1 className="text-white text-2xl py-4">{question}</h1>
+     <h1 className="text-white text-2xl py-4">{question}</h1>
       {options.map((option) => (
         <div className="px-52  my-6 ">
-          <p className=" bg-slate-400 text-green-200 border border-indigo-500 text-center  rounded-lg w-4/5">
-            <li className="mt-3 ">{option}</li>
-          </p>
+          
+          <button className=" bg-slate-400 text-green-200 border border-indigo-500 text-center  rounded-lg py-3 w-full" onClick={handleClick}>{option}</button>
         </div>
       ))}
-      <Link to="/statatics"><button className="border border-green-300 bg-slate-100 px-5 py-2 rounded-xl text-xl mr-20">See more
-      </button></Link>
+      <div className="m-auto border border-green-300 bg-slate-100  rounded px-2 w-32  text-orange-800  icon-size">
+      <EyeIcon className="w-8 ml-6" onClick={notify}></EyeIcon>
+      </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Quiz from '../Quiz/Quiz';
 import img from '../../image/1.jpg'
 import { useLoaderData } from 'react-router-dom';
+import Statatics from '../Statatics/Statatics';
 
 const Home = () => {
     const quizs=useLoaderData().data
@@ -20,6 +21,7 @@ const Home = () => {
                 {
                    quizs.map(quiz=><Quiz quiz={quiz} key={quiz.id}></Quiz>)
                 } 
+                
                 </div>
 
         

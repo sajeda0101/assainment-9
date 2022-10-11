@@ -20,6 +20,7 @@ function App() {
     element:<Home/>},
     {path:'/about',element:<About/>},
     {path:'/statatics',
+    loader:()=>fetch('https://openapi.programming-hero.com/api/quiz'),
     element:<Statatics/>},
     {path:'/blog',element:<Blog/>},
     {path:'/quiz/:quizId',
@@ -30,7 +31,9 @@ function App() {
 
   ])
   return (
- <RouterProvider router={router}></RouterProvider>
+ <RouterProvider router={router}>
+ 
+ </RouterProvider>
   );
 }
 
