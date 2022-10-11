@@ -8,8 +8,10 @@ const QuizStart = () => {
 
     return (
         <div className="m-36">
-            <h1 className='text-center text-4xl font-bold'> {quizs.name} Quiz</h1>
+        
+            <h1 className='text-center text-4xl font-bold'>Quiz of {quizs.name} </h1>
            {questions.map(question=><QuizDetails quizQuestion={question} key={question.id}></QuizDetails>)}
+            
         </div>
     );
 };

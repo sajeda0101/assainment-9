@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { QuizContext } from '../../Main/Main';
 import Quiz from '../Quiz/Quiz';
 import img from '../../image/1.jpg'
 import { useLoaderData } from 'react-router-dom';
@@ -9,7 +8,7 @@ const Home = () => {
   
    
     return (
-        <section style={{width:'960px' ,margin:'auto'}}>
+        <section style={{width:'960px' ,margin:'auto'}} className="grid grid-cols">
            
                 <div className='mb-16 mt-24'>
                     <h1 className='text-4xl mb-12 text-center font-bold'>Welcome to our Quiz World</h1>
@@ -17,7 +16,7 @@ const Home = () => {
                         <img src={img} alt="" className='w-full rounded mr-6 p-3' />
                     <p className='text-xl'>A quiz is a form of game or mind sport in which players attempt to answer questions correctly about a certain or variety of subjects. Quizzes can be used as a brief assessment in education and similar fields to measure growth in knowledge, abilities, or skills.In an educational context, a quiz is usually a form of a student assessment.</p></div>
                 </div>
-                <div className='grid grid-cols-3 md:grid-cols-2 '>
+                <div className='grid sm:grid-cols- md:grid-cols-2 lg:grid-cols-3'>
                 {
                    quizs.map(quiz=><Quiz quiz={quiz} key={quiz.id}></Quiz>)
                 } 
