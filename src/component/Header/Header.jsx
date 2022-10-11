@@ -1,3 +1,4 @@
+import { Bars3Icon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../../images/logo.png'
@@ -74,10 +75,11 @@ const Header = () => {
                   </Link>
                 </div> */}
                 <div>
+                <Bars3Icon className="bg-amber-100">
                   <button
                     className="p-2 -mt-2 -mr-2 transition duration-200 rounded"
                     onClick={() => setIsMenuOpen(false)}
-                  ></button>
+                  ></button></Bars3Icon>
                 </div>
               </div>
               <nav>

@@ -3,7 +3,7 @@ import img from '../../image/2.jpg'
 
 const Contact = () => {
     return (
-        <div className='mt-48 flex items-center mx-auto mb-6 shadow-lg bg-slate-50 w-4/5 px-24'>
+        <div className='mt-48 flex items-center mx-auto mb-6 shadow-lg bg-slate-50 w-4/5 px-24 sm:w-full '>
             <img src={img} alt="" className='rounded-lg'/>
             <div className='ml-6 text-center'>
                 <h1 className='text-4xl'>Sajeda Akter</h1>
