@@ -6,6 +6,7 @@ import About from './component/About/About';
 import Statatics from './component/Statatics/Statatics';
 import Blog from './component/Blog/Blog';
 import QuizStart from './component/QuizStart/QuizStart';
+import Contact from './component/Contact/Contact';
 
 
 
@@ -18,6 +19,7 @@ function App() {
     {path:'/home',
     loader:()=>fetch('https://openapi.programming-hero.com/api/quiz'),
     element:<Home/>},
+    {path:'/contact',element:<Contact/>},
     {path:'/about',element:<About/>},
     {path:'/statatics',
     loader:()=>fetch('https://openapi.programming-hero.com/api/quiz'),

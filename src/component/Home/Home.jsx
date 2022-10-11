@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <section style={{width:'960px' ,margin:'auto'}} className="grid grid-cols">
            
-                <div className='mb-16 mt-24'>
+                <div className='mb-16 mt-32'>
                     <h1 className='text-4xl mb-12 text-center font-bold'>Welcome to our Quiz World</h1>
                     <div className='flex items-center border border-abmer-100 rounded'>
                         <img src={img} alt="" className='w-full rounded mr-6 p-3' />
