@@ -1,4 +1,4 @@
-import { Bars3Icon } from "@heroicons/react/24/solid";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../../images/logo.png'
@@ -6,127 +6,31 @@ import logo from '../../images/logo.png'
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-  <section>
-      <div className="px-4 py-5 mx-auto  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 drop-shadow-md  bg-slate-200 fixed top-0 left-0 right-0">
-      <div className="relative flex items-center justify-between ">
-        <Link to="/" className="inline-flex items-center">
-          <img src={logo} alt="" className="w-16 ml-6" />
-          <span className="  text-xl font-bold tracking-wide text-gray-800 uppercase">
-            Quiz World
-          </span>
-        </Link>
-        <ul className="flex items-center text-white hidden space-x-8 lg:flex">
-          <li>
-            <Link
-              to="/home"
-              className="font-medium tracking-wide text-white text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              className="font-medium tracking-wide text-white text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/statatics"
-              className="font-medium text-white tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Statatics
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/blog"
-              className="font-medium text-white tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              className="font-medium text-white tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
-     
-      <div className="lg:hidden">
-        <button
-          className="p-3 mr-3 transition duration-200 rounded"
-          onClick={() => setIsMenuOpen(true)}
-        ></button>
-        {isMenuOpen && (
-          <div className="absolute top-20 left-0 w-full">
-            <div className="p-5 bg-white border rounded shadow-sm">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                <Bars3Icon className="bg-amber-100">
-                  <button
-                    className="p-2 -mt-2 -mr-2 transition duration-200 rounded"
-                    onClick={() => setIsMenuOpen(false)}
-                  ></button></Bars3Icon>
-                </div>
-              </div>
-              <nav>
-                <ul>
-                  <li>
-                    <Link
-                      to="/home"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/about"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/statics"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Statics
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/blog"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Blog
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/contact"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Contact
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        )}
+  <section className=' bg-slate-300 fixed top-0 left-0 right-0'>
+  <div className=' flex items-center   justify-between md:px-4 sm:px-44'>
+    <div className="flex items-center lg:mr-52 md:mr-2">
+      <img src={logo} className="w-20" alt="" />
+      <p className=" text-2xl ">Quiz World</p>
+    </div>
+  <nav className=" md:pr-32 ">
+      <div className="w-9 md:hidden sm:mr-4" onClick={()=>setIsMenuOpen(!isMenuOpen)}>
+      {
+        isMenuOpen?
+        <XMarkIcon/>
+        :<Bars3Icon/>
+      }
       </div>
-    </div>
-    </div>
-    
-    
+     
+      <ul className={`md:flex justify-center   sm:w-38   text-xl  absolute md:static duration-250 ease-in ${isMenuOpen? 'top-20':'top-[-140px]'}`}>
+        <li><Link to="/home" className=" text-center lg:px-3 px-12 py-1 md:px-2 rounded hover:bg-slate-500 hover:text-white">Home</Link></li>
+        <li><Link to="/about" className="text-center lg:px-3 px-12 py-1 md:px-2 rounded hover:bg-slate-500 hover:text-white">About</Link></li>
+        <li><Link to="/statatics" className="text-center lg:px-3 px-12 md:px-2 py-1 rounded hover:bg-slate-500 hover:text-white">Statatics</Link></li>
+        <li><Link to="/blog" className="text-center px-12 lg:px-3 md:px-2 rounded py-1 hover:bg-slate-500 hover:text-white">Blog</Link></li>
+        <li><Link to="/contact" className="text-center lg:px-3 px-12 md:px-2 rounded py-1 hover:bg-slate-500 hover:text-white">Contact</Link></li>
+      </ul>
+
+    </nav>
+  </div>
   </section>
   );
 };

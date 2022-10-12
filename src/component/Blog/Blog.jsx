@@ -3,10 +3,10 @@ import Footer from "../Footer/Footer";
 
 const Blog = () => {
   return (
-    <section className="m-32">
-      <div className="mt-32">
+    <section className="">
+      <div className="mt-32 mx-32">
       <div className="bg-gray-100 p-5 rounded leading-loose">
-        <h1 className="text-center text-2xl bold">
+        <h1 className="text-center text-2xl font-bold">
           What is purpose of use react router?
         </h1>
         <p>
@@ -68,7 +68,7 @@ const Blog = () => {
         </p>
       </div>
       <div className="bg-gray-100 p-5 rounded leading-loose mt-12">
-        <p className="text-center text-2xl bold">
+        <p className="text-center text-2xl font-bold">
           What is useContext and how to work its?
         </p>
         <p>
@@ -86,7 +86,7 @@ const Blog = () => {
         </p>
       </div>
       <div className="bg-gray-100 p-5 rounded leading-loose mt-12">
-        <p className="text-center text-2xl bold">What is useRef</p>
+        <p className="text-center text-2xl font-bold">What is useRef</p>
         <p>
           useRef returns a mutable ref object whose .current property is
           initialized to the passed argument (initialValue). The returned object

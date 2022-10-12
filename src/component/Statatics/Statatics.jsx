@@ -10,17 +10,19 @@ const Statatics = () => {
    
     return (
        
-       <div className='mt-52 px-44'>
+    <div>
+         <div className='mt-52 lg:px-96 md:px-96 px-20'>
      
-     <LineChart width={500} height={400} data={statatics}>
+     <LineChart width={500} height={400} data={statatics} >
       <Line dataKey='total'></Line>
       <XAxis dataKey='name' />
       <YAxis dataKey='total'/>
       <Tooltip/>
      </LineChart>
         
-        <Footer/>
        </div>
+        <Footer/>
+    </div>
     );
 };
 

@@ -11,7 +11,7 @@ const Quiz = ({ quiz }) => {
         src={logo}
         alt=""
         style={{ width: "250px" }}
-        className="rouded-xl m-3"
+        className="rouded-xl md:m-3 m-auto lg:m-auto"
       />
       <div className=" bg-slate-50  leading-loose p-2 rounded-xl text-xl">
        
