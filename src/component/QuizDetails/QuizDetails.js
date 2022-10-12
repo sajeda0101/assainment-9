@@ -10,7 +10,7 @@ const QuizDetails = ({ quizQuestion }) => {
   const rightAnswer=(value)=>{
     toast.success(`${value}`,{
       position:'top-center',
-      autoClose:2000,
+      autoClose:1000,
       hideProgressBar:false,
       closeOnClick:true,
       pauseOnHover:true,
@@ -22,7 +22,7 @@ const QuizDetails = ({ quizQuestion }) => {
   const wrongAnswer=(value)=>{
     toast.error(`${value}`,{
       position:'top-center',
-      autoClose:2000,
+      autoClose:1000,
       hideProgressBar:false,
       closeOnClick:true,
       pauseOnHover:true,
@@ -43,7 +43,7 @@ const QuizDetails = ({ quizQuestion }) => {
    
     const notify=()=>{
     if(correctAnswer===correctAnswer){
-      rightAnswer(correctAnswer)
+      rightAnswer("Correct Answer= "+correctAnswer)
     }
     }
   
@@ -56,10 +56,10 @@ const QuizDetails = ({ quizQuestion }) => {
       
      <h1 className="text-white text-2xl py-4">{question.slice(3,-4)}</h1>
       {options.map((option) => (
-        <div className="px-56 md:px-2 lg:px-52 sm:px-6  my-6 
+        <div className="px-56 md:px-2 lg:px-52 sm:px-6  my-6 focus:ring-violet-300
         ">
           
-          <button className=" bg-slate-400 text-green-200 border border-indigo-500 text-center  rounded-lg py-3 w-full" onClick={handleClick}>{option}</button>
+          <button className=" bg-slate-400 text-amber-100 border border-indigo-500 text-center  rounded-lg py-3 w-full" onClick={handleClick}>{option}</button>
         </div>
       ))}
       <div className="m-auto border  border-green-300 bg-slate-100  rounded px-2 w-32 lg:w-12  text-orange-800  icon-size">
