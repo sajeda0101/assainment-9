@@ -40,12 +40,12 @@ const QuizDetails = ({ quizQuestion }) => {
         wrongAnswer('Answer is Wrong')
       }
     }
-   const notify=(event)=>{
-    const value=event.target.innerText;
-      if(value===correctAnswer){
-        rightAnswer('Answer is Correct')
-      }
-   }
+   
+    const notify=()=>{
+    if(correctAnswer===correctAnswer){
+      rightAnswer(correctAnswer)
+    }
+    }
   
    
   const { question, options, } = quizQuestion;
