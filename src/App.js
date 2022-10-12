@@ -7,6 +7,7 @@ import Statatics from './component/Statatics/Statatics';
 import Blog from './component/Blog/Blog';
 import QuizStart from './component/QuizStart/QuizStart';
 import Contact from './component/Contact/Contact';
+import ErrorPage from './component/ErrorPage/ErrorPage';
 
 
 
@@ -14,7 +15,9 @@ import Contact from './component/Contact/Contact';
 function App() {
 
   const router=createBrowserRouter([
-    {path:'/',element:<Main></Main>,
+    {path:'/',
+    errorElement:<ErrorPage/>,
+    element:<Main></Main>,
   children:[
     {path:'/home',
     loader:()=>fetch('https://openapi.programming-hero.com/api/quiz'),

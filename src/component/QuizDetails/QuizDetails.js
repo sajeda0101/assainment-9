@@ -2,6 +2,7 @@ import { EyeIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from "../Footer/Footer";
 
 
 const QuizDetails = ({ quizQuestion }) => {
@@ -19,7 +20,7 @@ const QuizDetails = ({ quizQuestion }) => {
 
     })}
   const wrongAnswer=(value)=>{
-    toast.success(`${value}`,{
+    toast.error(`${value}`,{
       position:'top-center',
       autoClose:2000,
       hideProgressBar:false,
@@ -63,9 +64,10 @@ const QuizDetails = ({ quizQuestion }) => {
         </div>
       ))}
       <div className="m-auto border border-green-300 bg-slate-100  rounded px-2 w-32  text-orange-800  icon-size">
-      <EyeIcon className="w-8 ml-6" onClick={notify}></EyeIcon>
+      <EyeIcon className="w-8 ml-9" onClick={notify}></EyeIcon>
       </div>
       <ToastContainer></ToastContainer>
+      <Footer/>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import Footer from '../Footer/Footer';
 
 
 const Statatics = () => {
@@ -18,7 +19,7 @@ const Statatics = () => {
       <Tooltip/>
      </LineChart>
         
-        
+        <Footer/>
        </div>
     );
 };
